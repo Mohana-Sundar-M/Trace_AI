@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0B0F14;
+  --color-brand-surface: #11161D;
+  --color-brand-card: #151B23;
+  --color-accent-teal: #14b8a6; /* teal-500 */
+  --color-accent-blue: #3b82f6; /* blue-500 */
+  --color-success: #10b981; /* emerald-500 */
+  --color-warning: #f59e0b; /* amber-500 */
+  --color-critical: #ef4444; /* red-500 */
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  
+  --animate-subtle-bounce: subtle-bounce 2s infinite ease-in-out;
+  
+  @keyframes subtle-bounce {
+    0%, 100% { transform: translateY(-2%); }
+    50% { transform: translateY(0); }
+  }
+}
+
+@layer base {
+  :root {
+    --bg-primary: #0B0F14;
+    --bg-surface: #11161D;
+    --bg-card: #151B23;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --accent-teal: #14b8a6;
+    --accent-blue: #3b82f6;
+  }
+  
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar for dark fintech aesthetic */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2e303a;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-brand-card/80 backdrop-blur-md border border-white/5 shadow-xl;
+  }
+  .btn-primary {
+    @apply bg-accent-teal hover:bg-accent-teal/90 text-white font-medium py-2 px-4 rounded-md transition-all duration-200;
+  }
+  .btn-secondary {
+    @apply bg-brand-surface hover:bg-white/10 border border-white/10 text-white font-medium py-2 px-4 rounded-md transition-all duration-200;
+  }
+  .card {
+    @apply bg-brand-card border border-white/5 rounded-xl shadow-lg;
+  }
+}
