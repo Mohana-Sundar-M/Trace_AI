@@ -45,8 +45,8 @@ The central hub for monitoring system health and AI insights.
 Where TRACE breaks down anomalies and presents its findings.
 ![Investigation Workspace](docs/images/2.png)
 
-### 3. Ask TRACE (Natural Language Query)
-Interact with your financial data using plain English.
+### 3. AI Data Simulator
+Simulate multiple scenarios with this data simulator
 ![Ask TRACE](docs/images/3.png)
 
 ---
