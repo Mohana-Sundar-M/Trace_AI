@@ -6,6 +6,7 @@
     { "source": "/api/investigate", "destination": "/api/investigate" },
     { "source": "/api/ask", "destination": "/api/ask" },
     { "source": "/api/workflow", "destination": "/api/workflow" },
+    { "source": "/api/simulator/scenario", "destination": "/api/simulator/scenario" },
     { "source": "/api/graph/:type/:id", "destination": "/api/graph?type=:type&id=:id" },
     { "source": "/api/graph/(.*)", "destination": "/api/graph" },
     { "source": "/(.*)", "destination": "/index.html" }
