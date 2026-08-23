@@ -100,23 +100,23 @@ export default function InvestigationWorkspace() {
               <div className="space-y-4 font-mono">
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-text-secondary text-sm">Expected Amount</span>
-                  <span className="text-white">₹{((report.deterministic_context?.expected_amount || 0) / 100).toLocaleString()}</span>
+                  <span className="text-white">₹{((Number(report.deterministic_context?.expected_amount ?? report.expectedAmount ?? report.expected_amount) || 0) / 100).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-text-secondary text-sm">Actual Amount</span>
-                  <span className="text-white">₹{((report.deterministic_context?.actual_amount || 0) / 100).toLocaleString()}</span>
+                  <span className="text-white">₹{((Number(report.deterministic_context?.actual_amount ?? report.actualAmount ?? report.actual_amount) || 0) / 100).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-warning text-sm font-bold">Total Variance</span>
-                  <span className="text-warning font-bold">₹{((report.deterministic_context?.variance || 0) / 100).toLocaleString()}</span>
+                  <span className="text-warning font-bold">₹{((Number(report.deterministic_context?.variance ?? report.varianceAmount ?? report.variance_amount ?? report.variance) || 0) / 100).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b border-white/5">
                   <span className="text-success text-sm">Explained</span>
-                  <span className="text-success">₹{(report.explainedAmount / 100).toLocaleString()}</span>
+                  <span className="text-success">₹{((Number(report.explainedAmount ?? report.explained_amount) || 0) / 100).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 </div>
                 <div className="flex justify-between items-center pt-2">
                   <span className="text-critical text-sm font-bold">Unexplained</span>
-                  <span className="text-critical font-bold text-xl">₹{(report.unexplainedAmount / 100).toLocaleString()}</span>
+                  <span className="text-critical font-bold text-xl">₹{((Number(report.unexplainedAmount ?? (report.unexplained_amount ?? (Number(report.deterministic_context?.variance || report.variance_amount || 0) - Number(report.explainedAmount || report.explained_amount || 0)))) || 0) / 100).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 </div>
               </div>
             )}
