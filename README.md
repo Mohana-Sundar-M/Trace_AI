@@ -1,32 +1,135 @@
-# React + TypeScript + Vite
+<div align="center">
+  <img src="public/favicon.svg" alt="TRACE Logo" width="120" />
+  <h1>TRACE</h1>
+  <p><strong>AI-Powered Financial Investigation & Reconciliation Engine</strong></p>
+  <p>
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+    <img src="https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge&logo=google&logoColor=white" alt="Gemini" />
+    <img src="https://img.shields.io/badge/Production_Ready-FF5722?style=for-the-badge&logo=rocket&logoColor=white" alt="Production" />
+  </p>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+<br />
 
-Currently, two official plugins are available:
+## 🚀 What is TRACE?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**TRACE** is a production-grade, AI-driven financial operations platform designed to automate the detection, investigation, and resolution of payment anomalies. 
 
-## React Compiler
+Built initially as a hackathon project, TRACE transcends the typical "MVP" by delivering a robust, enterprise-ready architecture. It doesn't just surface data; it acts as an autonomous agent that deeply investigates financial discrepancies (like missing settlements or duplicate refunds) and presents actionable, evidence-backed recommendations to human operators.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 💡 The Problem vs. The Solution
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### The Problem
+In modern fintech, reconciling millions of transactions across payment gateways, banks, and internal ledgers is a nightmare. When a settlement fails or a payment drops, operations teams spend hours manually traversing databases, logs, and dashboards to find the root cause.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+### The TRACE Solution
+TRACE acts as a tireless digital financial analyst. By combining a deterministic correlation engine with the reasoning capabilities of **Google Gemini AI**, TRACE instantly:
+1. Detects the anomaly.
+2. Traverses the financial graph (Payment -> Refund -> Settlement -> Dispute).
+3. Synthesizes the evidence.
+4. Explains the root cause in plain English.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## 📸 Platform Snapshots
+
+*(Note: Replace these placeholder paths with actual screenshots of your application running!)*
+
+### 1. The Interactive Dashboard
+The central hub for monitoring system health and AI insights.
+![Dashboard Snapshot](docs/images/dashboard-snapshot.png)
+
+### 2. AI Investigation Workspace
+Where TRACE breaks down anomalies and presents its findings.
+![Investigation Workspace](docs/images/investigation-snapshot.png)
+
+### 3. Ask TRACE (Natural Language Query)
+Interact with your financial data using plain English.
+![Ask TRACE](docs/images/ask-trace-snapshot.png)
+
+### 4. Interactive Data Simulator
+A built-in sandbox to generate synthetic anomalies and watch the AI react in real-time.
+![Simulator](docs/images/simulator-snapshot.png)
+
+---
+
+## 🧠 How We Used AI (Our Uniqueness)
+
+While most projects use AI as a simple chatbot wrapper, TRACE integrates AI deeply into its core business logic as an **Agentic Engine**.
+
+* **Root Cause Analysis:** We feed deterministic graph data (financial relationships) into Gemini. Gemini analyzes the ledger timestamps, statuses, and monetary values to deduce *why* a failure occurred (e.g., "The refund failed because the original payment was disputed prior to settlement").
+* **Intent Parsing:** Our "Ask TRACE" feature uses AI to classify user intent (Investigate, Query, Explain) and dynamically route the request to the correct internal subsystem before generating a response.
+* **Fallback Safety:** AI is used for *reasoning*, but math and state transitions are handled deterministically by our TypeScript backend. This prevents AI hallucinations from affecting financial calculations.
+
+---
+
+## 🛠 Technical Stack
+
+### Frontend
+* **React 18** + **Vite** for lightning-fast rendering.
+* **Tailwind CSS** + **Lucide React** for a premium, glassmorphism-inspired dark mode UI.
+* **React Router** for seamless SPA navigation.
+
+### Backend & Infrastructure
+* **Supabase (PostgreSQL)**: Relational database with Row Level Security (RLS).
+* **Node.js Express / Edge Functions**: Handles the deterministic financial math and anomaly generation.
+* **Google GenAI SDK**: Powers the TRACE investigation brain.
+
+---
+
+## 🏭 Why it's "Production-Ready"
+
+TRACE isn't just a UI mock. It features:
+* **Fully Typed Codebase:** End-to-end TypeScript integration.
+* **Deterministic Financial Engine:** Uses integer-based math (paise/cents) to prevent floating-point precision errors during reconciliation.
+* **Graph Traversal:** Implements DFS/BFS algorithms to trace the lifecycle of a payment entity across multiple fragmented tables.
+* **Role-Based Access Control (RBAC):** UI and actions adapt based on whether the user is an Analyst, Auditor, or Finance Manager.
+* **Audit Trails:** Every action, AI recommendation, and human approval is cryptographically logged and immutable.
+
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+* Node.js (v18+)
+* Supabase Account
+* Google Gemini API Key
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Mohana-Sundar-M/Trace_AI.git
+   cd Trace_AI
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Set up Environment Variables:**
+   Create a `.env` file in the root directory:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   VITE_GEMINI_API_KEY=your_gemini_api_key
+   ```
+
+4. **Run the application:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Simulate Data:**
+   Navigate to the **Data Simulator** tab in the app to instantly seed your database with synthetic financial events and trigger AI investigations!
+
+---
+
+<div align="center">
+  <i>Built with ❤️ for the Hackathon</i>
+</div>
