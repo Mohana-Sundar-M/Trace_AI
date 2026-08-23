@@ -15,7 +15,7 @@
 
 ## 🚀 What is TRACE?
 
-**TRACE** is a production-grade, AI-driven financial operations platform designed to automate the detection, investigation, and resolution of payment anomalies. 
+**TRACE** is a production-grade, AI-driven financial operations platform designed to automate the detection, investigation, and resolution of payment anomalies.
 
 Built initially as a hackathon project, TRACE transcends the typical "MVP" by delivering a robust, enterprise-ready architecture. It doesn't just surface data; it acts as an autonomous agent that deeply investigates financial discrepancies (like missing settlements or duplicate refunds) and presents actionable, evidence-backed recommendations to human operators.
 
@@ -29,7 +29,7 @@ In modern fintech, reconciling millions of transactions across payment gateways,
 ### The TRACE Solution
 TRACE acts as a tireless digital financial analyst. By combining a deterministic correlation engine with the reasoning capabilities of **Google Gemini AI**, TRACE instantly:
 1. Detects the anomaly.
-2. Traverses the financial graph (Payment -> Refund -> Settlement -> Dispute).
+2. Traverses the financial graph (Payment → Refund → Settlement → Dispute).
 3. Synthesizes the evidence.
 4. Explains the root cause in plain English.
 
@@ -37,11 +37,9 @@ TRACE acts as a tireless digital financial analyst. By combining a deterministic
 
 ## 📸 Platform Snapshots
 
-*(Note: Replace these placeholder paths with actual screenshots of your application running!)*
-
 ### 1. The Interactive Dashboard
 The central hub for monitoring system health and AI insights.
-![Dashboard Snapshot](docs/images/dashboard-snapshot.png)
+![Dashboard Snapshot](docs/images/1.png)
 
 ### 2. AI Investigation Workspace
 Where TRACE breaks down anomalies and presents its findings.
@@ -49,11 +47,7 @@ Where TRACE breaks down anomalies and presents its findings.
 
 ### 3. Ask TRACE (Natural Language Query)
 Interact with your financial data using plain English.
-![Ask TRACE](docs/images/ask-trace-snapshot.png)
-
-### 4. Interactive Data Simulator
-A built-in sandbox to generate synthetic anomalies and watch the AI react in real-time.
-![Simulator](docs/images/3.png)
+![Ask TRACE](docs/images/3.png)
 
 ---
 
@@ -61,7 +55,7 @@ A built-in sandbox to generate synthetic anomalies and watch the AI react in rea
 
 While most projects use AI as a simple chatbot wrapper, TRACE integrates AI deeply into its core business logic as an **Agentic Engine**.
 
-* **Root Cause Analysis:** We feed deterministic graph data (financial relationships) into Gemini. Gemini analyzes the ledger timestamps, statuses, and monetary values to deduce *why* a failure occurred (e.g., "The refund failed because the original payment was disputed prior to settlement").
+* **Root Cause Analysis:** We feed deterministic graph data (financial relationships) into Gemini. Gemini analyzes ledger timestamps, statuses, and monetary values to deduce *why* a failure occurred (e.g., *"The refund failed because the original payment was disputed prior to settlement"*).
 * **Intent Parsing:** Our "Ask TRACE" feature uses AI to classify user intent (Investigate, Query, Explain) and dynamically route the request to the correct internal subsystem before generating a response.
 * **Fallback Safety:** AI is used for *reasoning*, but math and state transitions are handled deterministically by our TypeScript backend. This prevents AI hallucinations from affecting financial calculations.
 
@@ -70,25 +64,26 @@ While most projects use AI as a simple chatbot wrapper, TRACE integrates AI deep
 ## 🛠 Technical Stack
 
 ### Frontend
-* **React 18** + **Vite** for lightning-fast rendering.
-* **Tailwind CSS** + **Lucide React** for a premium, glassmorphism-inspired dark mode UI.
-* **React Router** for seamless SPA navigation.
+* **React 18** + **Vite** — lightning-fast HMR development and production builds.
+* **Tailwind CSS** + **Lucide React** — premium glassmorphism-inspired dark mode UI.
+* **React Router** — seamless SPA navigation.
 
 ### Backend & Infrastructure
-* **Supabase (PostgreSQL)**: Relational database with Row Level Security (RLS).
-* **Node.js Express / Edge Functions**: Handles the deterministic financial math and anomaly generation.
-* **Google GenAI SDK**: Powers the TRACE investigation brain.
+* **Supabase (PostgreSQL)** — relational database with Row Level Security (RLS).
+* **Node.js Express / Edge Functions** — deterministic financial math and anomaly generation.
+* **Google GenAI SDK** — powers the TRACE investigation brain.
 
 ---
 
 ## 🏭 Why it's "Production-Ready"
 
 TRACE isn't just a UI mock. It features:
-* **Fully Typed Codebase:** End-to-end TypeScript integration.
+* **Fully Typed Codebase:** End-to-end TypeScript integration across the entire stack.
 * **Deterministic Financial Engine:** Uses integer-based math (paise/cents) to prevent floating-point precision errors during reconciliation.
-* **Graph Traversal:** Implements DFS/BFS algorithms to trace the lifecycle of a payment entity across multiple fragmented tables.
-* **Role-Based Access Control (RBAC):** UI and actions adapt based on whether the user is an Analyst, Auditor, or Finance Manager.
-* **Audit Trails:** Every action, AI recommendation, and human approval is cryptographically logged and immutable.
+* **Graph Traversal:** DFS/BFS algorithms trace the lifecycle of a payment entity across multiple fragmented database tables.
+* **Role-Based Access Control (RBAC):** UI and actions adapt based on whether the user is an Operations Analyst, Auditor, or Finance Manager.
+* **Audit Trails:** Every action, AI recommendation, and human approval is immutably logged.
+* **Custom AI Key Support:** Users can bring their own Gemini API key or use the system default — configurable directly from the dashboard.
 
 ---
 
@@ -131,5 +126,5 @@ TRACE isn't just a UI mock. It features:
 ---
 
 <div align="center">
-  <i>Built with ❤️ for the Hackathon</i>
+  <i>Built with ❤️ for the Hackathon — engineered for Production</i>
 </div>
