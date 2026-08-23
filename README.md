@@ -41,13 +41,17 @@ TRACE acts as a tireless digital financial analyst. By combining a deterministic
 
 ### 1. The Interactive Dashboard
 The central hub for monitoring system health and AI insights.
-![Dashboard Snapshot](docs/images1.png)
+![Dashboard Snapshot](docs/images/dashboard-snapshot.png)
 
 ### 2. AI Investigation Workspace
 Where TRACE breaks down anomalies and presents its findings.
 ![Investigation Workspace](docs/images/2.png)
 
-### 3. Interactive Data Simulator
+### 3. Ask TRACE (Natural Language Query)
+Interact with your financial data using plain English.
+![Ask TRACE](docs/images/ask-trace-snapshot.png)
+
+### 4. Interactive Data Simulator
 A built-in sandbox to generate synthetic anomalies and watch the AI react in real-time.
 ![Simulator](docs/images/3.png)
 
